@@ -1,0 +1,22 @@
+name: Actualités
+on:
+  schedule:
+    - cron: "17 5 * * *"   # tous les jours vers 7 h (heure de Paris)
+  workflow_dispatch: {}      # bouton « Run workflow » pour lancer à la main
+permissions:
+  contents: write
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/fetch_news.py
+      - name: Enregistrer si changement
+        run: |
+          git config user.name "msp-bot"
+          git config user.email "mspdelestuaire@gmail.com"
+          git add news.json
+          git diff --cached --quiet || (git commit -m "Mise à jour des actualités" && git push)
