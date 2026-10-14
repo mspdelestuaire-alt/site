@@ -124,7 +124,7 @@ header{position:fixed;inset:12px 0 auto 0;z-index:50;padding-inline:12px;pointer
 .person{display:flex;gap:16px;align-items:center}
 .av{flex:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--sage);color:var(--leaf-d);font:600 1.15rem var(--f-display);transition:transform .35s}
 .person b{display:block;font-weight:700;line-height:1.25}
-.person small{color:var(--muted);font-size:.88rem}.rdvlink{color:inherit;text-decoration:underline;text-underline-offset:3px}.person a.rdvlink{color:inherit;text-decoration:underline;text-decoration-color:var(--mint,#8fc3a8);text-underline-offset:3px}.person a.rdvlink:hover{text-decoration-thickness:2px}.person small.rdvhint{display:block;font-size:.8rem;font-weight:600}
+.person small{color:var(--muted);font-size:.88rem}.rdvlink{color:inherit;text-decoration:underline;text-underline-offset:3px}.person a.rdvlink{color:inherit;text-decoration:underline;text-decoration-color:var(--mint,#8fc3a8);text-underline-offset:3px}.person a.rdvlink:hover{text-decoration-thickness:2px}.person small.rdvhint{display:block;font-size:.8rem;font-weight:600;margin-top:2px}.person small.rdvhint a{color:var(--forest,#2a6a52);padding:4px 0;display:inline-block}
 .coord{margin-top:46px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:var(--forest);color:#fff;border-radius:32px;padding:30px}
 .coord .av{width:84px;height:84px;font-size:1.7rem;background:var(--sun);color:var(--forest)}
 .coord p{color:#CFE3D6;margin-top:6px}
@@ -391,7 +391,7 @@ footer small{display:block;margin-top:30px;color:#93B3A1;font-size:.82rem}
     <h2 class="rv" data-i18n="ct_h"></h2>
     <div class="contact">
       <div class="card rv"><b data-i18n="ct_mail"></b><span class="sel">mspdelestuaire@gmail.com</span><p style="margin-top:10px"><a class="btn" href="mailto:mspdelestuaire@gmail.com" data-i18n="ct_write"></a></p></div>
-      <div class="card rv" style="--d:.08s"><b data-i18n="ct_phone"></b><span class="tbd" data-i18n="tbd"></span><p style="margin-top:10px;color:var(--muted);font-size:.93rem" data-i18n="ct_phone_p"></p></div>
+      <div class="card rv" style="--d:.08s"><b data-i18n="ct_phone"></b><p style="margin-top:0;color:var(--muted);font-size:.93rem" data-i18n="ct_phone_p"></p></div>
       <div class="card rv" style="--d:.16s"><b data-i18n="ct_rdv"></b><p style="color:var(--muted);font-size:.95rem" data-i18n="ct_rdv_p"></p><p style="margin-top:10px"><a class="btn solid" href="https://www.doctolib.fr" target="_blank" rel="noopener" data-i18n="cta_rdv"></a></p></div>
     </div>
   </div>
@@ -582,7 +582,7 @@ function initials(n){var w=n.replace(/^Dr /,'').split(' ');return (w[0][0]+(w[w.
 function renderTeam(){
   var all=[];TEAM.forEach(function(g){g.p.forEach(function(p){all.push([p,g.g])})});
   $('#team').innerHTML='<div class="grid g3">'+all.map(function(x,i){
-    var p=x[0],nm=esc(p[0]);if(p[2])nm='<a class="rdvlink" href="'+p[2]+'" target="_blank" rel="noopener">'+nm+'</a>';return '<div class="card person rv" style="--d:'+((i%3)*.07)+'s"><div class="av">'+initials(p[0])+'</div><div><b>'+nm+'</b><small>'+esc(ROLE[x[1]][lang])+(p[1]?' · '+esc(p[1]):'')+'</small>'+(p[2]?'<small class="rdvhint">'+(/doctolib|clickdoc/.test(p[2])?t('book_dl'):t('book_info'))+' →</small>':'')+'</div></div>';
+    var p=x[0],nm=esc(p[0]);if(p[2])nm='<a class="rdvlink" href="'+p[2]+'" target="_blank" rel="noopener">'+nm+'</a>';return '<div class="card person rv" style="--d:'+((i%3)*.07)+'s"><div class="av">'+initials(p[0])+'</div><div><b>'+nm+'</b><small>'+esc(ROLE[x[1]][lang])+(p[1]?' · '+esc(p[1]):'')+'</small>'+(p[2]?'<small class="rdvhint"><a class="rdvlink" href="'+p[2]+'" target="_blank" rel="noopener">'+(/doctolib|clickdoc/.test(p[2])?t('book_dl'):t('book_info'))+' →</a></small>':'')+'</div></div>';
   }).join('')+'</div>';
 }
 function renderEmerg(){
@@ -605,7 +605,7 @@ function renderLive(){
     return '<article class="card rv" style="--d:'+((i%3)*.07)+'s"><a href="'+esc(n.link)+'" target="_blank" rel="noopener"><small>'+esc(n.source||'')+(d?' · '+d:'')+'</small><h3 style="font-size:1.08rem;margin-top:8px">'+esc(n.title)+'</h3><div class="go">'+t('read')+' →</div></a></article>';
   }).join('');observe();
 }
-try{fetch('news.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():[]}).then(function(a){if(Array.isArray(a)){LIVE=a;renderLive()}}).catch(function(){})}catch(e){}
+try{fetch('news.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():[]}).then(function(a){if(Array.isArray(a)){var K=["sant\u00e9","sante","m\u00e9decin","medecin","h\u00f4pital","hopital","soin","pharmac","infirm","vaccin","pr\u00e9vention","prevention","maison de sant","msp","cpts","urgences","cancer","diab","d\u00e9pistage","depistage","\u00e9pid\u00e9mie","epidemie","grippe","covid","canicule","addiction","tabac","alcool","pand\u00e9mie","pandemie","maladie","virus","bronchiolite","allergie","sant\u00e9 mentale","d\u00e9pression","depression","vieillissement","handicap","m\u00e9dicament","medicament","clinique","ehpad","dentiste","soignant","secours","pompiers","sevrage","nutrition","ob\u00e9sit\u00e9","obesite","sommeil","douleur","accident"," avc","sage-femme","psycho","patient","ars ","assurance maladie","d\u00e9sert m\u00e9dical","desert medical"],B=["capoeira","football","rugby","match","concert","festival","loto","vide-grenier","brocante","spectacle","tournoi","exposition"];LIVE=a.filter(function(n){var x=(n.title||'').toLowerCase();return K.some(function(k){return x.indexOf(k)>-1})&&!B.some(function(k){return x.indexOf(k)>-1})});renderLive()}}).catch(function(){})}catch(e){}
 var scores={};
 function renderRows(){
   $('#sv_rows').innerHTML=['q1','q2','q3'].map(function(q){
