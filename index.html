@@ -31,7 +31,7 @@ body{margin:0;background:var(--mist);color:var(--forest);font-family:var(--f-bod
 h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
 h2{font-size:clamp(2rem,4.6vw,3.4rem);letter-spacing:-.01em}
 h3{font-size:1.3rem}
-p{margin:0}
+p{margin:0;text-wrap:pretty}
 a{color:var(--leaf-d)}
 .wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
 section{padding-block:clamp(56px,9vw,120px);scroll-margin-top:84px}
@@ -45,7 +45,7 @@ section{padding-block:clamp(56px,9vw,120px);scroll-margin-top:84px}
 
 /* nav */
 header{position:fixed;inset:12px 0 auto 0;z-index:50;padding-inline:12px;pointer-events:none}
-.nav{pointer-events:auto;max-width:1180px;margin-inline:auto;display:flex;align-items:center;gap:10px;background:rgba(238,246,240,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 16px;box-shadow:0 6px 24px rgba(17,47,34,.08)}
+.nav{pointer-events:auto;max-width:1340px;margin-inline:auto;display:flex;align-items:center;gap:10px;background:rgba(238,246,240,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 16px;box-shadow:0 6px 24px rgba(17,47,34,.08)}
 .nav .cta{white-space:nowrap;padding:10px 18px;font-size:.88rem}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--forest);font:600 1.02rem var(--f-display);white-space:nowrap}
 .brand img{width:36px;height:36px;flex:none;border-radius:50%;box-shadow:0 0 0 1.5px #B9B4D6}
@@ -57,7 +57,7 @@ header{position:fixed;inset:12px 0 auto 0;z-index:50;padding-inline:12px;pointer
 .lang button{border:0;background:transparent;border-radius:999px;padding:5px 11px;font:700 .8rem var(--f-body);color:var(--muted);cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--leaf);color:#fff}
 .burger{display:none;border:0;background:var(--sage);width:40px;height:40px;border-radius:50%;cursor:pointer;color:var(--forest)}
-@media(max-width:940px){
+@media(max-width:1160px){
   .links{display:none;position:absolute;left:12px;right:12px;top:62px;flex-direction:column;background:var(--mist);border:1px solid var(--line);border-radius:24px;padding:10px;box-shadow:0 14px 30px rgba(17,47,34,.14)}
   .links.open{display:flex}
   .links a{padding:13px 16px}
@@ -115,6 +115,26 @@ header{position:fixed;inset:12px 0 auto 0;z-index:50;padding-inline:12px;pointer
 .site .acts{display:flex;flex-wrap:wrap;gap:8px}
 .site .btn{padding:9px 15px;font-size:.88rem}
 
+
+.sites{display:grid;gap:26px;margin-top:40px}
+.site{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(28px,5vw,64px);padding:clamp(26px,4vw,44px)}
+.site .sitel dl{gap:22px;margin:22px 0 26px}
+.site dd{font-size:1.02rem;line-height:1.55}
+.siter .hh{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.hrs{display:grid}
+.hr{display:grid;grid-template-columns:minmax(120px,.8fr) 1.4fr;gap:6px 22px;padding:16px 0;border-top:1px solid var(--line)}
+.hr:first-child{border-top:0;padding-top:4px}
+.hl{font-weight:700;color:var(--forest)}
+.hs{display:grid;gap:6px}
+.hs strong{font-weight:800;color:var(--leaf-d);white-space:nowrap}
+@media(max-width:860px){.site{grid-template-columns:1fr}.hr{grid-template-columns:1fr}}
+@media(hover:hover) and (pointer:fine){.site.card:hover{transform:none;box-shadow:0 18px 40px rgba(17,47,34,.10)}}
+#equipe .wrap>.eyebrow,#equipe .wrap>h2,#equipe .wrap>.lead{text-align:center}
+#equipe .wrap>.lead{margin-inline:auto}
+.links a.navrdv{background:var(--leaf);color:#fff}
+@media(min-width:1161px){.links a{padding:8px 8px;font-size:.86rem}.nav{gap:8px}}
+@media(min-width:1161px) and (max-width:1500px){.brand span{display:none}}
+.links a.navrdv:hover{background:var(--leaf-d)}
 .tint{background:var(--sage);border-radius:44px;margin-inline:12px}
 .tint .card,.tint .value{border-color:transparent}
 
@@ -131,7 +151,7 @@ header{position:fixed;inset:12px 0 auto 0;z-index:50;padding-inline:12px;pointer
 @media(max-width:560px){.coord{grid-template-columns:1fr}}
 
 /* rdv strip */
-.strip{background:var(--leaf);color:#fff;border-radius:40px;padding:clamp(30px,5vw,56px);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;margin-inline:12px}
+.strip{margin-top:32px;background:var(--leaf);color:#fff;border-radius:40px;padding:clamp(30px,5vw,56px);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;margin-inline:12px}
 .strip h2{color:#fff;font-size:clamp(1.7rem,3.4vw,2.5rem);max-width:20ch}
 .strip p{color:#DDEFE4;margin-top:8px;max-width:48ch}
 .strip .btn{background:#fff;color:var(--leaf-d);border-color:#fff}
@@ -217,6 +237,7 @@ footer small{display:block;margin-top:30px;color:#93B3A1;font-size:.82rem}
       <a href="#actus" data-i18n="nav_news"></a>
       <a href="#avis" data-i18n="nav_survey"></a>
       <a href="#contact" data-i18n="nav_contact"></a>
+      <a class="navrdv" href="#equipe" data-i18n="cta_rdv"></a>
     </div>
     <div class="lang" role="group" aria-label="Langue / Language">
       <button type="button" data-lang="fr" aria-pressed="true">FR</button>
@@ -277,17 +298,16 @@ footer small{display:block;margin-top:30px;color:#93B3A1;font-size:.82rem}
       <h1 data-i18n="hero_h"></h1>
       <p data-i18n="hero_p"></p>
       <div class="row">
-        <a class="btn solid" href="https://www.doctolib.fr" target="_blank" rel="noopener" data-i18n="cta_rdv"></a>
+        <a class="btn solid" href="#equipe" data-i18n="cta_rdv"></a>
         <a class="btn" href="#lieux" data-i18n="cta_places"></a>
       </div>
-      <div class="pillars"><span data-i18n="pill1"></span><span data-i18n="pill2"></span><span data-i18n="pill3"></span></div>
     </div>
   </div>
 </div>
 
 <div class="strip rv">
   <div><h2 data-i18n="rdv_h"></h2><p data-i18n="rdv_p"></p></div>
-  <a class="btn" href="https://www.doctolib.fr" target="_blank" rel="noopener" data-i18n="cta_rdv"></a>
+  <a class="btn" href="#equipe" data-i18n="cta_rdv"></a>
 </div>
 
 <section id="esprit">
@@ -321,7 +341,7 @@ footer small{display:block;margin-top:30px;color:#93B3A1;font-size:.82rem}
     <span class="eyebrow rv" data-i18n="places_eye"></span>
     <h2 class="rv" data-i18n="places_h"></h2>
     <p class="lead rv" data-i18n="places_p"></p>
-    <div class="grid g3" id="sites"></div>
+    <div class="sites" id="sites"></div>
   </div>
 </section>
 
@@ -392,7 +412,7 @@ footer small{display:block;margin-top:30px;color:#93B3A1;font-size:.82rem}
     <div class="contact">
       <div class="card rv"><b data-i18n="ct_mail"></b><span class="sel">mspdelestuaire@gmail.com</span><p style="margin-top:10px"><a class="btn" href="mailto:mspdelestuaire@gmail.com" data-i18n="ct_write"></a></p></div>
       <div class="card rv" style="--d:.08s"><b data-i18n="ct_phone"></b><p style="margin-top:0;color:var(--muted);font-size:.93rem" data-i18n="ct_phone_p"></p></div>
-      <div class="card rv" style="--d:.16s"><b data-i18n="ct_rdv"></b><p style="color:var(--muted);font-size:.95rem" data-i18n="ct_rdv_p"></p><p style="margin-top:10px"><a class="btn solid" href="https://www.doctolib.fr" target="_blank" rel="noopener" data-i18n="cta_rdv"></a></p></div>
+      <div class="card rv" style="--d:.16s"><b data-i18n="ct_rdv"></b><p style="color:var(--muted);font-size:.95rem" data-i18n="ct_rdv_p"></p><p style="margin-top:10px"><a class="btn solid" href="#equipe" data-i18n="cta_rdv"></a></p></div>
     </div>
   </div>
 </section>
@@ -422,11 +442,11 @@ document.documentElement.classList.add('js');
 
 /* ===== CONTENU À COMPLÉTER : adresses, téléphones, horaires ===== */
 var SITES=[
- {name:'Gauriac',zip:'33710',city:'Gauriac',phone:'Rendez-vous cabinet : 05 64 36 01 21\nPharmacie : 05 57 64 86 11',hours:{fr:'Pharmacie : lun.–ven. 9h–19h30, sam. 9h–18h30\nCabinet infirmier : tournées 7j/7, 7h30–19h30\nSage-femme : 8h–19h\nPsychologue : mer., ven., sam. 8h30–19h\nMédecins : lun. 14h–18h30, mer. et jeu. 9h–12h30',en:'Pharmacy: Mon–Fri 9am–7:30pm, Sat 9am–6:30pm\nNursing practice: rounds 7 days a week, 7:30am–7:30pm\nMidwife: 8am–7pm\nPsychologist: Wed, Fri, Sat 8:30am–7pm\nDoctors: Mon 2pm–6:30pm, Wed & Thu 9am–12:30pm'},access:{fr:'Parking disponible sur place · Accès PMR',en:'On-site parking · Wheelchair accessible'},tag:{fr:'Siège de la MSP',en:'MSP headquarters'},
+ {name:'Gauriac',zip:'33710',city:'Gauriac',phone:'Rendez-vous cabinet : 05 64 36 01 21\nPharmacie : 05 57 64 86 11',hours:{fr:'Pharmacie : lun.–ven. 9h–19h30 | sam. 9h–18h30\nCabinet infirmier : tournées 7j/7, 7h30–19h30\nSage-femme : 8h–19h\nPsychologue : mer., ven., sam. 8h30–19h\nMédecins : lun. 14h–18h30 | mer. et jeu. 9h–12h30',en:'Pharmacy: Mon–Fri 9am–7:30pm | Sat 9am–6:30pm\nNursing practice: rounds 7 days a week, 7:30am–7:30pm\nMidwife: 8am–7pm\nPsychologist: Wed, Fri, Sat 8:30am–7pm\nDoctors: Mon 2pm–6:30pm | Wed & Thu 9am–12:30pm'},access:{fr:'Parking disponible sur place · Accès PMR',en:'On-site parking · Wheelchair accessible'},tag:{fr:'Siège de la MSP',en:'MSP headquarters'},
   addrs:[{l:{fr:'Siège de la MSP et pharmacie',en:'MSP head office and pharmacy'},t:'2 rue de la Plaine, 33710 Gauriac',main:true},
          {l:{fr:'Cabinets médical et infirmier',en:'Medical and nursing practices'},t:'8 route de la Gabare, 33710 Gauriac'}]},
  {name:'Blaye',zip:'33390',city:'Blaye',phone:'',hours:{fr:'Médecins : lun.–ven. 8h30–19h',en:'Doctors: Mon–Fri 8:30am–7pm'},access:{fr:'Parking disponible sur place · Accès PMR',en:'On-site parking · Wheelchair accessible'},tag:{fr:'Site de Blaye',en:'Blaye site'},addrs:[]},
- {name:'Prignac-et-Marcamps',zip:'33710',city:'Prignac-et-Marcamps',phone:'',hours:{fr:'Médecins : lun. 8h45–20h30, mar. 8h45–20h, mer.–ven. 8h45–19h, samedi matin',en:'Doctors: Mon 8:45am–8:30pm, Tue 8:45am–8pm, Wed–Fri 8:45am–7pm, Saturday morning'},access:{fr:'Parking disponible sur place · Accès PMR',en:'On-site parking · Wheelchair accessible'},tag:{fr:'Site de Prignac',en:'Prignac site'},
+ {name:'Prignac-et-Marcamps',zip:'33710',city:'Prignac-et-Marcamps',phone:'',hours:{fr:'Médecins : lun. 8h45–20h30 | mar. 8h45–20h | mer.–ven. 8h45–19h | samedi matin',en:'Doctors: Mon 8:45am–8:30pm | Tue 8:45am–8pm | Wed–Fri 8:45am–7pm | Saturday morning'},access:{fr:'Parking disponible sur place · Accès PMR',en:'On-site parking · Wheelchair accessible'},tag:{fr:'Site de Prignac',en:'Prignac site'},
   addrs:[{l:{fr:'Cabinet médical',en:'Medical practice'},t:'71 avenue des Côtes de Bourg, 33710 Prignac-et-Marcamps',main:true}]}
 ];
 var TEAM=[
@@ -465,9 +485,9 @@ pv_v_h:'Vaccination',pv_v_p:'Médecins, infirmières et pharmacienne peuvent fai
 pv_b_h:'Informations officielles',pv_b_p:'Le site de l’Assurance Maladie rassemble des conseils de prévention fiables, à consulter à votre rythme.',
 news_live:'À la une',news_src:'Sources utiles',
 pill1:'3 sites',pill2:'Plusieurs professions de santé',pill3:'Un parcours de soins coordonné',
-about_eye:'Notre esprit',about_h:'Une équipe qui se coordonne, pour que vous n’ayez pas à tout raconter deux fois.',
-about_p:'La maison de santé pluriprofessionnelle de l’Estuaire rassemble des soignants indépendants qui ont choisi de coordonner leur travail autour des habitants du territoire. Chacun garde son exercice et sa liberté de soigner. Ensemble, nous partageons des protocoles, nous nous réunissons pour discuter des situations complexes et nous prenons le temps de la prévention.',
-v1_h:'Travailler ensemble, en confiance',v1_p:'Nous sommes tous tenus au secret médical. Quand nous échangeons entre soignants de l’équipe, c’est uniquement pour mieux vous accompagner : on ne partage que ce qui est utile à vos soins, vous en êtes informé, et si vous préférez qu’une information reste entre vous et un professionnel, il suffit de nous le dire.',
+about_eye:'Notre esprit',about_h:'Une équipe qui se coordonne : dites‑le‑nous une seule fois.',
+about_p:'La maison de santé pluriprofessionnelle de l’Estuaire rassemble des soignants indépendants qui ont choisi de coordonner leur travail autour des habitants du territoire. Chacun garde son exercice et sa liberté de soigner. Ensemble, nous partageons des protocoles, nous nous réunissons pour discuter des situations complexes et nous prenons le temps de la prévention.',
+v1_h:'Travailler ensemble, en confiance',v1_p:'Nous sommes tous tenus au secret médical. Quand nous échangeons entre soignants de l’équipe, c’est uniquement pour mieux vous accompagner : on ne partage que ce qui est utile à vos soins, vous en êtes informé, et si vous préférez qu’une information reste entre vous et un professionnel, il suffit de nous le dire.',
 v2_h:'Prévenir autant que soigner',v2_p:'Santé des femmes, diabète, plaies et cicatrisation : des projets communs pensés avec les besoins du territoire.',
 v3_h:'Former la relève',v3_p:'Nos médecins accueillent des étudiants et des internes, pour que de jeunes soignants s’installent un jour dans l’estuaire.',
 places_eye:'Nos lieux',places_h:'Trois sites, une même équipe.',places_p:'Retrouvez l’adresse, les horaires et un itinéraire en un clic.',
@@ -475,7 +495,7 @@ addr:'Adresse',access:'Accès et stationnement',access_hint:'Parking, accès PMR
 book_dl:'Prendre rendez-vous',book_info:'Voir la fiche',book_ph:'Pharmacie : prendre rendez-vous',team_eye:'L’équipe',team_h:'Les professionnels de la maison de santé.',team_p:'Les associés de la MSP exercent dans leur propre cabinet ou officine et se coordonnent au sein de la structure.',
 g_doc:'Médecins généralistes',g_nur:'Infirmières',g_mid:'Sage-femme',g_pha:'Pharmacienne',
 coord_h:'Kinley Manga, coordinateur',coord_p:'Il organise le travail commun de la MSP : réunions, projets de santé, relations avec l’Assurance Maladie et les partenaires. Il n’est pas soignant.',
-rdv_h:'Besoin d’un rendez-vous ?',rdv_p:'La prise de rendez-vous se fait en ligne, sur Doctolib, ou directement auprès du cabinet concerné.',
+rdv_h:'Besoin d’un rendez-vous ?',rdv_p:'Choisissez votre professionnel dans l’équipe : vous y trouverez le lien pour prendre rendez-vous en ligne.',
 urg_eye:'Urgences et numéros utiles',urg_h:'En cas de danger, appelez tout de suite.',
 em15:'SAMU : urgence médicale vitale',em112:'Numéro d’urgence européen',em112b:'',em17b:'Police, gendarmerie',em18b:'Sapeurs-pompiers',em114b:'Urgences par SMS pour sourds et malentendants',em115b:'Hébergement d’urgence',em119b:'Enfance en danger',em3919b:'Violences faites aux femmes',em3114b:'Prévention du suicide, 24 h/24',em196b:'Secours en mer (CROSS)',
 em17:'',em18:'',em114:'',em115:'',em119:'',em3919:'',em3114:'',em196:'',
@@ -494,7 +514,7 @@ q1:'L’accueil',q2:'Le délai pour avoir un rendez-vous',q3:'L’écoute et les
 sv_consent:'J’ai lu la politique de confidentialité et je n’ai écrit aucune information permettant de m’identifier.',
 sv_send:'Envoyer mon avis',sv_need:'Merci de cocher la case de confirmation avant d’envoyer.',
 sv_thx_h:'Merci pour votre retour.',sv_thx_p:'Il aidera l’équipe à améliorer l’accueil dans les trois sites.',
-ct_eye:'Contact',ct_h:'Nous écrire, nous appeler.',ct_mail:'Par e-mail',ct_write:'Écrire à la MSP',ct_phone:'Par téléphone',ct_phone_p:'Chaque site a sa ligne. Les numéros figurent dans « Nos lieux ».',ct_rdv:'Rendez-vous en ligne',ct_rdv_p:'Réservez directement auprès des professionnels qui utilisent Doctolib.',
+ct_eye:'Contact',ct_h:'Nous écrire, nous appeler.',ct_mail:'Par e-mail',ct_write:'Écrire à la MSP',ct_phone:'Par téléphone',ct_phone_p:'Chaque site a sa ligne. Les numéros figurent dans « Nos lieux ».',ct_rdv:'Rendez-vous en ligne',ct_rdv_p:'Choisissez votre professionnel dans l’équipe pour prendre rendez-vous en ligne.',
 ft_tag:'Maison de santé pluriprofessionnelle de l’Estuaire, en Haute-Gironde.',ft_legal:'Mentions légales',ft_privacy:'Confidentialité (RGPD)',ft_cookies:'Cookies',ft_access:'Accessibilité'
 },
 en:{
@@ -511,9 +531,9 @@ pv_v_h:'Vaccination',pv_v_p:'Doctors, nurses and the pharmacist can review your 
 pv_b_h:'Official information',pv_b_p:'The health insurance website gathers reliable prevention advice, to read at your own pace.',
 news_live:'Latest',news_src:'Useful sources',
 pill1:'3 sites',pill2:'Several health professions',pill3:'Coordinated care',
-about_eye:'Our spirit',about_h:'A team that coordinates, so you don’t have to repeat your story twice.',
-about_p:'The Estuaire multi-professional health centre brings together independent practitioners who chose to coordinate their work around the people of the area. Each keeps their own practice and freedom to care. Together, we share protocols, meet to discuss complex cases and make time for prevention.',
-v1_h:'Working together, in confidence',v1_p:'We are all bound by medical confidentiality. When we talk among the team, it is only to support you better: we share only what is useful for your care, you are always informed, and if you would rather keep something between you and one professional, just tell us.',
+about_eye:'Our spirit',about_h:'A team that coordinates: tell us just once.',
+about_p:'The Estuaire multi-professional health centre brings together independent practitioners who chose to coordinate their work around the people of the area. Each keeps their own practice and freedom to care. Together, we share protocols, meet to discuss complex cases and make time for prevention.',
+v1_h:'Working together, in confidence',v1_p:'We are all bound by medical confidentiality. When we talk among the team, it is only to support you better: we share only what is useful for your care, you are always informed, and if you would rather keep something between you and one professional, just tell us.',
 v2_h:'Prevention as much as treatment',v2_p:'Women’s health, diabetes, wounds and healing: joint projects built around local needs.',
 v3_h:'Training the next generation',v3_p:'Our doctors host students and trainees, so that young practitioners may one day settle in the estuary.',
 places_eye:'Locations',places_h:'Three sites, one team.',places_p:'Find the address, opening hours and directions in one click.',
@@ -521,7 +541,7 @@ addr:'Address',access:'Access and parking',access_hint:'Parking, step-free acces
 book_dl:'Book an appointment',book_info:'View profile',book_ph:'Pharmacy: book an appointment',team_eye:'The team',team_h:'The health centre’s professionals.',team_p:'The partners practise in their own surgery or pharmacy and coordinate their work through the centre.',
 g_doc:'General practitioners',g_nur:'Nurses',g_mid:'Midwife',g_pha:'Pharmacist',
 coord_h:'Kinley Manga, coordinator',coord_p:'He organises the centre’s shared work: meetings, health projects, relations with the health insurance and partners. He is not a clinician.',
-rdv_h:'Need an appointment?',rdv_p:'You can book online on Doctolib, or contact the relevant practice directly.',
+rdv_h:'Need an appointment?',rdv_p:'Choose your professional in the team section: you will find the link to book online.',
 urg_eye:'Emergency and useful numbers',urg_h:'In danger, call immediately.',
 em15:'SAMU: life-threatening medical emergency',em112:'European emergency number',em112b:'',em17b:'Police',em18b:'Fire brigade',em114b:'Emergency by text for deaf and hard-of-hearing people',em115b:'Emergency housing',em119b:'Children in danger',em3919b:'Violence against women',em3114b:'Suicide prevention, 24/7',em196b:'Sea rescue (CROSS)',
 em17:'',em18:'',em114:'',em115:'',em119:'',em3919:'',em3114:'',em196:'',
@@ -540,7 +560,7 @@ q1:'The welcome',q2:'Waiting time for an appointment',q3:'Listening and explanat
 sv_consent:'I have read the privacy policy and I did not write any information that could identify me.',
 sv_send:'Send my feedback',sv_need:'Please tick the confirmation box before sending.',
 sv_thx_h:'Thank you for your feedback.',sv_thx_p:'It will help the team improve the welcome at all three sites.',
-ct_eye:'Contact',ct_h:'Write to us, call us.',ct_mail:'By email',ct_write:'Email the centre',ct_phone:'By phone',ct_phone_p:'Each site has its own line. Numbers are listed under “Locations”.',ct_rdv:'Online booking',ct_rdv_p:'Book directly with the professionals who use Doctolib.',
+ct_eye:'Contact',ct_h:'Write to us, call us.',ct_mail:'By email',ct_write:'Email the centre',ct_phone:'By phone',ct_phone_p:'Each site has its own line. Numbers are listed under “Locations”.',ct_rdv:'Online booking',ct_rdv_p:'Choose your professional in the team section to book online.',
 ft_tag:'Estuaire multi-professional health centre, in Haute-Gironde.',ft_legal:'Legal notice',ft_privacy:'Privacy (GDPR)',ft_cookies:'Cookies',ft_access:'Accessibility'
 }};
 var ROLE={doc:{fr:'Médecin généraliste',en:'General practitioner'},nur:{fr:'Infirmière',en:'Nurse'},mid:{fr:'Sage-femme',en:'Midwife'},psy:{fr:'Psychologue',en:'Psychologist'},pha:{fr:'Pharmacienne d’officine',en:'Community pharmacist'}};
@@ -562,14 +582,21 @@ var t=function(k){return (T[lang]&&T[lang][k]!==undefined)?T[lang][k]:(T.fr[k]||
 var $=function(s,r){return (r||document).querySelector(s)};
 var esc=function(x){return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
 
+function hoursHtml(txt){
+  var re=/(\d{1,2}(?:h\d{0,2}|:\d{2})?\s?(?:am|pm)?\s?[–-]\s?\d{1,2}(?:h\d{0,2}|:\d{2})?\s?(?:am|pm)?)/gi;
+  return '<div class="hrs">'+txt.split('\n').map(function(line){
+    var k=line.indexOf(':'),k2=line.search(/ ?: /),lab=line.slice(0,k2),rest=line.slice(k2).replace(/^ ?: /,'');
+    return '<div class="hr"><span class="hl">'+esc(lab)+'</span><span class="hs">'+rest.split(' | ').map(function(x){return '<span>'+esc(x).replace(re,'<strong>$1</strong>')+'</span>'}).join('')+'</span></div>';
+  }).join('')+'</div>';
+}
 function mapQ(s){var m=(s.addrs||[]).filter(function(x){return x.main})[0];return encodeURIComponent(m?m.t:(s.zip+' '+s.city))}
 function renderSites(){
   $('#sites').innerHTML=SITES.map(function(s,i){
     var addr=s.addrs.length?s.addrs.map(function(x){return '<span style="display:block;margin-bottom:6px"><small style="display:block;color:var(--muted);font-size:.8rem">'+esc(x.l[lang])+'</small>'+esc(x.t)+(x.check?' <span class="tbd">'+t('verify')+'</span>':'')+'</span>'}).join(''):'<span class="tbd">'+t('tbd')+'</span><br>'+s.zip+' '+esc(s.city);
-    var hrs=s.hours?esc(s.hours[lang]).replace(/\n/g,'<br>'):'<span class="tbd">'+t('tbd')+'</span>';
+    var hrs=s.hours?hoursHtml(s.hours[lang]):'<span class="tbd">'+t('tbd')+'</span>';
     var ph=s.phone?'<span class="sel">'+esc(s.phone).replace(/\n/g,'<br>')+'</span>':'<span class="tbd">'+t('tbd')+'</span>';
     if(s.name==='Gauriac'&&s.phone)ph+='<br><a class="rdvlink" style="font-weight:600" href="https://www.doctolib.fr/pharmacie/gauriac/pharmacie-de-gauriac" target="_blank" rel="noopener">'+t('book_ph')+' →</a>';var acc=s.access?esc(s.access[lang]):'<span class="tbd">'+t('tbd')+'</span> <small style="display:block;color:var(--muted);margin-top:4px">'+t('access_hint')+'</small>';
-    return '<article class="card site rv" style="--d:'+(i*.08)+'s"><span class="tag">'+esc(s.tag[lang])+'</span><h3>'+esc(s.name)+'</h3><dl><div><dt>'+t('addr')+'</dt><dd>'+addr+'</dd></div><div><dt>'+t('hours')+'</dt><dd>'+hrs+'</dd></div><div><dt>'+t('phone')+'</dt><dd>'+ph+'</dd></div><div><dt>'+t('access')+'</dt><dd>'+acc+'</dd></div></dl><div class="acts"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+mapQ(s)+'">'+t('gmaps')+'</a><a class="btn" target="_blank" rel="noopener" href="https://waze.com/ul?q='+mapQ(s)+'&navigate=yes">'+t('waze')+'</a></div></article>';
+    return '<article class="card site rv" style="--d:'+(i*.08)+'s"><div class="sitel"><span class="tag">'+esc(s.tag[lang])+'</span><h3>'+esc(s.name)+'</h3><dl><div><dt>'+t('addr')+'</dt><dd>'+addr+'</dd></div><div><dt>'+t('phone')+'</dt><dd>'+ph+'</dd></div><div><dt>'+t('access')+'</dt><dd>'+acc+'</dd></div></dl><div class="acts"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+mapQ(s)+'">'+t('gmaps')+'</a><a class="btn" target="_blank" rel="noopener" href="https://waze.com/ul?q='+mapQ(s)+'&navigate=yes">'+t('waze')+'</a></div></div><div class="siter"><div class="hh">'+t('hours')+'</div>'+hrs+'</div></article>';
   }).join('');
 }
 var PREV=[['f','M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z'],['d','M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z'],['w','M12 5v14M5 12h14'],['s','M12 3 4 6v6c0 5 3.500 8 8 9 4.500-1 8-4 8-9V6l-8-3zM9 12l2 2 4-4'],['v','M9 3h6v4l3 3v11H6V10l3-3V3zM6 14h12'],['b','M5 4h14v16H5zM9 9h6M9 13h6M9 17h3']];
@@ -622,6 +649,22 @@ function applyLang(){
 }
 document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){lang=b.dataset.lang;try{localStorage.setItem('msp_lang',lang)}catch(e){}applyLang();if(ovKey)openOv(ovKey)})});
 
+/* défilement : la section visée est centrée dans la fenêtre */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;
+  var id=a.getAttribute('href').slice(1);if(!id)return;
+  var sec=document.getElementById(id);if(!sec)return;
+  e.preventDefault();
+  var top;
+  if(id==='top'){top=0}else{
+    var el=sec.querySelector('.wrap')||sec,r=el.getBoundingClientRect(),h=r.height,vh=innerHeight;
+    top=h<vh-140?scrollY+r.top-(vh-h)/2:scrollY+r.top-110;
+  }
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  scrollTo({top:Math.max(0,top),behavior:reduce?'auto':'smooth'});
+  try{history.replaceState(null,'','#'+id)}catch(x){}
+  var l=document.getElementById('links');if(l&&l.classList.contains('open')){l.classList.remove('open');var b=document.getElementById('burger');if(b)b.setAttribute('aria-expanded','false')}
+});
 /* reveal on scroll */
 var io=null;
 function observe(){
