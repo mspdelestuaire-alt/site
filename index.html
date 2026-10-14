@@ -117,8 +117,12 @@ header{position:fixed;inset:12px 0 auto 0;z-index:50;padding-inline:12px;pointer
 
 
 .sites{display:grid;gap:26px;margin-top:40px}
-.site{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(28px,5vw,64px);padding:clamp(26px,4vw,44px)}
-.site .sitel dl{gap:22px;margin:22px 0 26px}
+.site{display:block;padding:clamp(12px,1.6vw,18px)}
+.sitehead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;background:var(--leaf);color:#fff;border-radius:20px;padding:20px clamp(20px,3vw,32px)}
+.sitehead h3{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:700;color:#fff;margin:0;line-height:1.05}
+.sitehead .tag{background:#fff;color:var(--leaf-d);border-radius:999px;padding:6px 14px;font-size:.78rem}
+.sitebody{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(28px,5vw,64px);padding:clamp(24px,3.4vw,40px) clamp(8px,2.4vw,30px) clamp(12px,2vw,22px)}
+.site .sitel dl{gap:22px;margin:0 0 26px}
 .site dd{font-size:1.02rem;line-height:1.55}
 .siter .hh{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
 .hrs{display:grid}
@@ -127,8 +131,10 @@ header{position:fixed;inset:12px 0 auto 0;z-index:50;padding-inline:12px;pointer
 .hl{font-weight:700;color:var(--forest)}
 .hs{display:grid;gap:6px}
 .hs strong{font-weight:800;color:var(--leaf-d);white-space:nowrap}
-@media(max-width:860px){.site{grid-template-columns:1fr}.hr{grid-template-columns:1fr}}
+@media(max-width:860px){.sitebody{grid-template-columns:1fr}.hr{grid-template-columns:1fr}}
 @media(hover:hover) and (pointer:fine){.site.card:hover{transform:none;box-shadow:0 18px 40px rgba(17,47,34,.10)}}
+h2.h-two{white-space:pre-line;font-size:clamp(1.6rem,3.1vw,2.55rem);text-wrap:wrap}
+@media(max-width:520px){h2.h-two{font-size:1.55rem}}
 #equipe .wrap>.eyebrow,#equipe .wrap>h2,#equipe .wrap>.lead{text-align:center}
 #equipe .wrap>.lead{margin-inline:auto}
 .links a.navrdv{background:var(--leaf);color:#fff}
@@ -314,7 +320,7 @@ footer small{display:block;margin-top:30px;color:#93B3A1;font-size:.82rem}
   <div class="wrap split">
     <div>
       <span class="eyebrow rv" data-i18n="about_eye"></span>
-      <h2 class="rv" data-i18n="about_h"></h2>
+      <h2 class="rv h-two" data-i18n="about_h"></h2>
       <p class="lead rv" data-i18n="about_p"></p>
       <div class="values">
         <div class="value rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15.5 14.5c3 0 5.5 2 5.5 5"/></svg></i><div><h3 data-i18n="v1_h"></h3><p data-i18n="v1_p"></p></div></div>
@@ -485,7 +491,7 @@ pv_v_h:'Vaccination',pv_v_p:'Médecins, infirmières et pharmacienne peuvent fai
 pv_b_h:'Informations officielles',pv_b_p:'Le site de l’Assurance Maladie rassemble des conseils de prévention fiables, à consulter à votre rythme.',
 news_live:'À la une',news_src:'Sources utiles',
 pill1:'3 sites',pill2:'Plusieurs professions de santé',pill3:'Un parcours de soins coordonné',
-about_eye:'Notre esprit',about_h:'Une équipe qui se coordonne : dites‑le‑nous une seule fois.',
+about_eye:'Notre esprit',about_h:'Une équipe qui se coordonne :\ndites‑le‑nous une seule fois.',
 about_p:'La maison de santé pluriprofessionnelle de l’Estuaire rassemble des soignants indépendants qui ont choisi de coordonner leur travail autour des habitants du territoire. Chacun garde son exercice et sa liberté de soigner. Ensemble, nous partageons des protocoles, nous nous réunissons pour discuter des situations complexes et nous prenons le temps de la prévention.',
 v1_h:'Travailler ensemble, en confiance',v1_p:'Nous sommes tous tenus au secret médical. Quand nous échangeons entre soignants de l’équipe, c’est uniquement pour mieux vous accompagner : on ne partage que ce qui est utile à vos soins, vous en êtes informé, et si vous préférez qu’une information reste entre vous et un professionnel, il suffit de nous le dire.',
 v2_h:'Prévenir autant que soigner',v2_p:'Santé des femmes, diabète, plaies et cicatrisation : des projets communs pensés avec les besoins du territoire.',
@@ -531,7 +537,7 @@ pv_v_h:'Vaccination',pv_v_p:'Doctors, nurses and the pharmacist can review your 
 pv_b_h:'Official information',pv_b_p:'The health insurance website gathers reliable prevention advice, to read at your own pace.',
 news_live:'Latest',news_src:'Useful sources',
 pill1:'3 sites',pill2:'Several health professions',pill3:'Coordinated care',
-about_eye:'Our spirit',about_h:'A team that coordinates: tell us just once.',
+about_eye:'Our spirit',about_h:'A team that coordinates:\ntell us just once.',
 about_p:'The Estuaire multi-professional health centre brings together independent practitioners who chose to coordinate their work around the people of the area. Each keeps their own practice and freedom to care. Together, we share protocols, meet to discuss complex cases and make time for prevention.',
 v1_h:'Working together, in confidence',v1_p:'We are all bound by medical confidentiality. When we talk among the team, it is only to support you better: we share only what is useful for your care, you are always informed, and if you would rather keep something between you and one professional, just tell us.',
 v2_h:'Prevention as much as treatment',v2_p:'Women’s health, diabetes, wounds and healing: joint projects built around local needs.',
@@ -596,7 +602,7 @@ function renderSites(){
     var hrs=s.hours?hoursHtml(s.hours[lang]):'<span class="tbd">'+t('tbd')+'</span>';
     var ph=s.phone?'<span class="sel">'+esc(s.phone).replace(/\n/g,'<br>')+'</span>':'<span class="tbd">'+t('tbd')+'</span>';
     if(s.name==='Gauriac'&&s.phone)ph+='<br><a class="rdvlink" style="font-weight:600" href="https://www.doctolib.fr/pharmacie/gauriac/pharmacie-de-gauriac" target="_blank" rel="noopener">'+t('book_ph')+' →</a>';var acc=s.access?esc(s.access[lang]):'<span class="tbd">'+t('tbd')+'</span> <small style="display:block;color:var(--muted);margin-top:4px">'+t('access_hint')+'</small>';
-    return '<article class="card site rv" style="--d:'+(i*.08)+'s"><div class="sitel"><span class="tag">'+esc(s.tag[lang])+'</span><h3>'+esc(s.name)+'</h3><dl><div><dt>'+t('addr')+'</dt><dd>'+addr+'</dd></div><div><dt>'+t('phone')+'</dt><dd>'+ph+'</dd></div><div><dt>'+t('access')+'</dt><dd>'+acc+'</dd></div></dl><div class="acts"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+mapQ(s)+'">'+t('gmaps')+'</a><a class="btn" target="_blank" rel="noopener" href="https://waze.com/ul?q='+mapQ(s)+'&navigate=yes">'+t('waze')+'</a></div></div><div class="siter"><div class="hh">'+t('hours')+'</div>'+hrs+'</div></article>';
+    return '<article class="card site rv" style="--d:'+(i*.08)+'s"><div class="sitehead"><h3>'+esc(s.name)+'</h3><span class="tag">'+esc(s.tag[lang])+'</span></div><div class="sitebody"><div class="sitel"><dl><div><dt>'+t('addr')+'</dt><dd>'+addr+'</dd></div><div><dt>'+t('phone')+'</dt><dd>'+ph+'</dd></div><div><dt>'+t('access')+'</dt><dd>'+acc+'</dd></div></dl><div class="acts"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+mapQ(s)+'">'+t('gmaps')+'</a><a class="btn" target="_blank" rel="noopener" href="https://waze.com/ul?q='+mapQ(s)+'&navigate=yes">'+t('waze')+'</a></div></div><div class="siter"><div class="hh">'+t('hours')+'</div>'+hrs+'</div></div></article>';
   }).join('');
 }
 var PREV=[['f','M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z'],['d','M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z'],['w','M12 5v14M5 12h14'],['s','M12 3 4 6v6c0 5 3.500 8 8 9 4.500-1 8-4 8-9V6l-8-3zM9 12l2 2 4-4'],['v','M9 3h6v4l3 3v11H6V10l3-3V3zM6 14h12'],['b','M5 4h14v16H5zM9 9h6M9 13h6M9 17h3']];
