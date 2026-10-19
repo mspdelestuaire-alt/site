@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://msp-estuaire.fr/sitemap.xml
